@@ -1,3 +1,7 @@
+---
+layout: home
+---
+
 # 测试文章
 
 <script setup>
