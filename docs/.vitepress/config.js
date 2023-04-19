@@ -7,8 +7,23 @@ export default defineConfig({
   lang: 'zh-CN',
   base: '/docs/',
   cleanUrls: true,
+  lastUpdated: true,
+  appearance: false,
   themeConfig: {
-    logo: 'public/favicon.ico',
-    ...navConfig
+    ...navConfig,
+    logo: 'favicon.ico',
+    docFooter: {
+      prev: '上一页',
+      next: '下一页'
+    },
+    editLink: {
+      text: '在 GitHub 上查看',
+      pattern: 'https://github.com/lu-yanpeng/docs/tree/master/docs/:path'
+    },
+    outlineTitle: '目录',
+    socialLinks: [
+      {icon: 'github', link: 'https://github.com/lu-yanpeng/docs'}
+    ],
+    lastUpdatedText: '最后更新'
   }
 })

@@ -1,3 +1,10 @@
+---
+layout: doc
+next:
+  text: '测试'
+  link: '/frontend/vue-demo/test'
+---
+
 # 开关
 
 <script setup>
@@ -11,14 +18,14 @@ import Switch from '../../../components/frontend/vue-demo/Switch.vue'
 ::: details 代码
 ```vue
 <template>
-<label class="switch">
-<input
-type="checkbox"
-:checked="modelValue"
-@change="$emit('update:modelValue', $event.target.checked)"
->
-<span class="slider"></span>
-</label>
+  <label class="switch">
+    <input
+        type="checkbox"
+        :checked="modelValue"
+        @change="$emit('update:modelValue', $event.target.checked)"
+    >
+    <span class="slider"></span>
+  </label>
 </template>
 
 <script setup>
@@ -32,7 +39,7 @@ defineEmits(['update:modelValue'])
 
 </script>
 
-<style scoped>
+<style scoped lang="less">
 /* 开关——滑块周围的盒子 */
 .switch {
   font-size: 17px;
