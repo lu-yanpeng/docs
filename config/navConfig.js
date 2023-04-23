@@ -87,6 +87,7 @@ export const navConfig = {
         items: [
           {text: '安装', link: '/tools/git/index'},
           {text: '基本操作', link: '/tools/git/overview'},
+          {text: '删除', link: '/tools/git/delete'},
         ]
       }
     ],
