@@ -1,6 +1,7 @@
 // 导航栏和侧边栏的配置
 
 export const navConfig = {
+  // 导航栏
   nav: [
     {
       text: 'vue',
@@ -9,6 +10,9 @@ export const navConfig = {
     {
       text: '前端',
       items: [
+        {
+          text: 'vue router', link: '/frontend/vue-router/intro'
+        },
         {
           text: '示例',
           items: [
@@ -26,6 +30,9 @@ export const navConfig = {
       ],
     },
   ],
+
+
+  // 侧边栏
   sidebar: {
     '/vue/': [
       {
@@ -42,7 +49,19 @@ export const navConfig = {
       }
     ],
 
-    // 前端代码示例
+
+    // 前端
+    '/frontend/vue-router/': [
+      {
+        text: 'vue router',
+        items: [
+          {text: '介绍', link: '/frontend/vue-router/intro'},
+          {text: '安装', link: '/frontend/vue-router/install'},
+          {text: '路由', link: '/frontend/vue-router/route'},
+          {text: '嵌套路由', link: '/frontend/vue-router/children'},
+        ]
+      }
+    ],
     '/frontend/vue-demo/': [
       {
         text: 'vue示例',
