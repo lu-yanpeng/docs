@@ -3,10 +3,10 @@
 export const navConfig = {
   // 导航栏
   nav: [
-    {
-      text: 'vue',
-      link: '/vue/base/install',
-    },
+    {text: 'vue', link: '/vue/base/install',},
+    {text: 'js', link: '/js/intro'},
+    {text: 'python', link: '/python/typing',},    
+
     {
       text: '前端',
       items: [
@@ -20,6 +20,12 @@ export const navConfig = {
             {text: 'css', link: '/frontend/css-demo/table'},
           ]
         },        
+      ]
+    },
+    {
+      text: '后端',
+      items: [
+        {text: 'FastAPI', link: '/backend/fastapi/intro'},        
       ]
     },
     {
@@ -47,6 +53,12 @@ export const navConfig = {
           {text: 'test', link: '/vue/senior/index'}
         ],
       }
+    ],
+    '/python/': [
+      {text: '类型提示', link: '/python/typing'}
+    ],
+    '/js/': [
+      {text: '介绍', link: '/js/intro'}
     ],
 
 
@@ -79,6 +91,17 @@ export const navConfig = {
           {text: '展开动画', link: '/frontend/css-demo/fold'},
         ]
       }
+    ],
+
+    '/backend/fastapi': [      
+      {text: '介绍', link: '/backend/fastapi/intro'},
+      {text: '请求前缀', link: '/backend/fastapi/proxy'},
+      {
+        text: '登录', 
+        items: [
+          {text: '介绍', link: '/backend/fastapi/login/intro'},
+        ]
+      },
     ],
 
     '/tools/git/': [
