@@ -32,7 +32,8 @@ export const navConfig = {
       text: '工具',
       items: [
         {text: 'git', link: '/tools/git/index'},
-        {text: 'vitepress', link: '/tools/vitepress/overview'},
+        {text: 'vite', link: '/tools/vite/config'},
+        {text: 'vitepress', link: '/tools/vitepress/overview'},                
       ],
     },
   ],
@@ -44,7 +45,9 @@ export const navConfig = {
       {
         text: '基础',
         items: [
-          {text: '安装', link: '/vue/base/install'}
+          {text: '安装', link: '/vue/base/install'},          
+          {text: '手动创建项目', link: '/vue/base/manually-creating-projects'},          
+          {text: '组件配置项', link: '/vue/base/comp-options'},
         ]
       },
       {
@@ -80,6 +83,7 @@ export const navConfig = {
         items: [
           {text: '开关按钮', link: '/frontend/vue-demo/switch'},
           {text: 'markdown', link: '/frontend/vue-demo/markdown'},
+          {text: '瀑布流', link: '/frontend/vue-demo/masonry'},
         ]
       },
     ],
@@ -96,6 +100,7 @@ export const navConfig = {
     '/backend/fastapi': [      
       {text: '介绍', link: '/backend/fastapi/intro'},
       {text: '请求前缀', link: '/backend/fastapi/proxy'},
+      {text: '项目结构', link: '/backend/fastapi/project-dir'},
       {
         text: '登录', 
         items: [
@@ -123,5 +128,13 @@ export const navConfig = {
         ]
       }
     ],
+    '/tools/vite/': [
+      {
+        text: 'vite',
+        items: [
+          {text: '配置', link: '/tools/vite/config'},
+        ]
+      }
+    ]
   }
 }

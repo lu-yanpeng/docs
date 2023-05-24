@@ -11,3 +11,17 @@ npm init vue@latest
 ```shell
 npm install -g pnpm
 ```
+
+## 创建项目
+
+创建项目，在当前目录下创建一个vue项目，这个命令默认会安装最新版的vue。
+
+```shell
+npm init vue@latest
+```
+
+启动，具体的启动命令可以到`package.json`里面看。
+
+```shell
+npm run dev
+```
