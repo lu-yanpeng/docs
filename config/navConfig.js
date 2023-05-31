@@ -10,9 +10,8 @@ export const navConfig = {
     {
       text: '前端',
       items: [
-        {
-          text: 'vue router', link: '/frontend/vue-router/intro'
-        },
+        {text: 'vue router', link: '/frontend/vue-router/intro'},
+        {text: 'axios', link: '/frontend/axios/retry'},
         {
           text: '示例',
           items: [
@@ -48,6 +47,7 @@ export const navConfig = {
           {text: '安装', link: '/vue/base/install'},          
           {text: '手动创建项目', link: '/vue/base/manually-creating-projects'},          
           {text: '组件配置项', link: '/vue/base/comp-options'},
+          {text: '组件实例属性', link: '/vue/base/comp-instance'},
         ]
       },
       {
@@ -58,7 +58,8 @@ export const navConfig = {
       }
     ],
     '/python/': [
-      {text: '类型提示', link: '/python/typing'}
+      {text: '类型提示', link: '/python/typing'},
+      {text: '时间处理', link: '/python/datetime'},
     ],
     '/js/': [
       {text: '介绍', link: '/js/intro'}
@@ -76,6 +77,14 @@ export const navConfig = {
           {text: '嵌套路由', link: '/frontend/vue-router/children'},
         ]
       }
+    ],
+    '/frontend/axios/': [
+      {
+        text: 'axios',
+        items: [
+          {text: '重试', link: '/frontend/axios/retry'},
+        ]
+      },
     ],
     '/frontend/vue-demo/': [
       {
