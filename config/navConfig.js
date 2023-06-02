@@ -93,6 +93,7 @@ export const navConfig = {
           {text: '开关按钮', link: '/frontend/vue-demo/switch'},
           {text: 'markdown', link: '/frontend/vue-demo/markdown'},
           {text: '瀑布流', link: '/frontend/vue-demo/masonry'},
+          {text: '对话框', link: '/frontend/vue-demo/dialog'},
         ]
       },
     ],
