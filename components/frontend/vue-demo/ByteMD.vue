@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { Editor, Viewer } from '@bytemd/vue-next'
 import 'bytemd/dist/index.min.css'
 import gfm from '@bytemd/plugin-gfm'
@@ -15,17 +15,12 @@ import highlight from '@bytemd/plugin-highlight'
 // 中文工具栏
 import zh_Hans from 'bytemd/locales/zh_Hans.json'
 
-const sdStr = ref('')
+const sdStr = ref('# 标题1')
 const plugins = [gfm(), highlight()]
 const onChange = (v) => {
   sdStr.value = v
 }
 
-onMounted(async () => {
-  const response = await fetch('http://101.89.173.9:8000/api/v1/article/detail/10')
-  const { body } = await response.json()
-  sdStr.value = body
-})
 
 // highlight.js用来显示代码高亮
 const linkHighlight = document.createElement('link')
@@ -44,7 +39,3 @@ document.head.appendChild(linkTheme)
 * @bytemd/plugin-highlight 插件可以按需求装
 * */
 </script>
-
-<style scoped>
-
-</style>

@@ -10,6 +10,7 @@
     "@bytemd/plugin-gfm": "^1.21.0",
     "@bytemd/plugin-highlight": "^1.21.0",
     "@bytemd/vue-next": "^1.21.0",
+    "@egjs/vue3-infinitegrid": "^4.10.0",
     "bytemd": "^1.21.0",
     "echarts": "^5.4.1",
     "vue": "^3.2.47"
