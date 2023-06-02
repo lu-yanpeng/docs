@@ -20,6 +20,7 @@
                     '.jpg'
                 "
                     alt="egjs"
+                    loading="lazy"
                 />
             </div>
         </div>

@@ -8,8 +8,7 @@
 
 ## 说明
 
-这里暂时没有示例，因为打包的时候会报错，需要等待作者修复`CommonJS`的bug，已经有人提了[PR](https://github.com/naver/egjs-infinitegrid/pull/536)估计下个版本就会修复了。
-本地运行的时候不会报错，可以参考源码编写demo
+图片比较多可能加载的比较满，没有反应的话可以刷新试试。
 
 
 <script setup>
