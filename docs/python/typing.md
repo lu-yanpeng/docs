@@ -192,9 +192,13 @@ class A(Generic[T]):
     def __init__(self, a: T, b: str) -> None:
         self.a = a
         self.b = b
+        
 # test是A类型，并且属性a是float类型
 test: A[float]  # float就表示a的类型
 ```
+
+`Generic`是一个特殊的类它实现了[`__class_getitem__()`](https://docs.python.org/zh-cn/3.10/reference/datamodel.html#object.__class_getitem__)
+继承它的类可以用`[]`的方式调用，调用之后他会返回一个类型别名，用来给变量指定类型
 
 ### 类型变量 TypeVar
 

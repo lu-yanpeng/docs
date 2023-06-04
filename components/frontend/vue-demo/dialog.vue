@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch} from 'vue'
+import {ref, watchEffect} from 'vue'
 
 const props = defineProps({
   modelValue: {
@@ -10,12 +10,11 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const dialog = ref(null)
-watch(() => props.modelValue, (value) => {
-  if (value) {
-    return dialog.value.showModal()
-  }
-  dialog.value.close()
-})
+watchEffect(() => {
+  props.modelValue?
+      dialog.value.showModal():
+      dialog.value.close()
+}, {flush: 'post'})
 
 const closeDialog = () => {
   dialog.value.close()

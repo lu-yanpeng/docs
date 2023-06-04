@@ -58,8 +58,10 @@ export const navConfig = {
       }
     ],
     '/python/': [
+      {text: '虚拟环境', link: '/python/env'},
       {text: '类型提示', link: '/python/typing'},
       {text: '时间处理', link: '/python/datetime'},
+      {text: 'pip', link: '/python/pip'},
     ],
     '/js/': [
       {text: '介绍', link: '/js/intro'}
@@ -111,12 +113,24 @@ export const navConfig = {
       {text: '介绍', link: '/backend/fastapi/intro'},
       {text: '请求前缀', link: '/backend/fastapi/proxy'},
       {text: '项目结构', link: '/backend/fastapi/project-dir'},
+      {text: '请求体', link: '/backend/fastapi/body'},
+      {text: '跨域', link: '/backend/fastapi/cors'},
+      {text: 'api 文档', link: '/backend/fastapi/openapi'},
+      {text: '依赖项', link: '/backend/fastapi/dependencies'},
       {
         text: '登录', 
         items: [
           {text: '介绍', link: '/backend/fastapi/login/intro'},
         ]
       },
+      {
+        text: 'pydantic',
+        items: [
+          {text: '示例', link: '/backend/fastapi/pydantic/example'},
+          {text: '验证器', link: '/backend/fastapi/pydantic/validator'},
+          {text: '环境变量', link: '/backend/fastapi/pydantic/settings'},
+        ]
+      }
     ],
 
     '/tools/git/': [
