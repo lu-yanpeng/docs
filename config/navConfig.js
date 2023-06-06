@@ -12,6 +12,7 @@ export const navConfig = {
       items: [
         {text: 'vue router', link: '/frontend/vue-router/intro'},
         {text: 'axios', link: '/frontend/axios/retry'},
+        {text: 'pinia', link: '/frontend/pinia/intro'},
         {
           text: '示例',
           items: [
@@ -55,7 +56,8 @@ export const navConfig = {
         items: [
           {text: 'test', link: '/vue/senior/index'}
         ],
-      }
+      },
+      {text: '小技巧', link: '/vue/tips'}
     ],
     '/python/': [
       {text: '虚拟环境', link: '/python/env'},
@@ -85,8 +87,23 @@ export const navConfig = {
         text: 'axios',
         items: [
           {text: '重试', link: '/frontend/axios/retry'},
+          {text: '封装', link: '/frontend/axios/package'},
         ]
       },
+    ],
+    '/frontend/pinia': [
+      {
+        text: 'pinia',
+        items: [
+          {text: '介绍', link: '/frontend/pinia/intro'},
+          {text: 'store', link: '/frontend/pinia/store'},
+          {text: 'state', link: '/frontend/pinia/state'},
+          {text: 'getter', link: '/frontend/pinia/getter'},
+          {text: 'action', link: '/frontend/pinia/action'},
+          {text: '插件', link: '/frontend/pinia/plugins'},
+          {text: '常见问题', link: '/frontend/pinia/tips'},
+        ]
+      }
     ],
     '/frontend/vue-demo/': [
       {
@@ -117,6 +134,7 @@ export const navConfig = {
       {text: '跨域', link: '/backend/fastapi/cors'},
       {text: 'api 文档', link: '/backend/fastapi/openapi'},
       {text: '依赖项', link: '/backend/fastapi/dependencies'},
+      {text: '路由', link: '/backend/fastapi/router'},
       {
         text: '登录', 
         items: [

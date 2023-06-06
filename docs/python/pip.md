@@ -8,21 +8,21 @@
 pip config debug
 ```
 
-配置文件的写法，[命令] + 选项 + 选项值
+配置文件的写法，[命令] + 选项 + 选项值。配置文件里面的选项不需要加`--`，它和命令的选项一一对应，所有命令和选项在[这里](https://pip.pypa.io/en/stable/cli/)查看。
 
 ```txt
 [command]
 option: 值
 ```
 
-比如现在要配置`install`命令的`index-url`，就可以这样写
+比如现在要配置`install`命令的`--index-url`选项，就可以这样写
 
 ```txt
 [install]
 index-url: https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-这样每次使用install命令的时候都会自动加上`index-url`选项了。[global]表示全局配置，如果同时配置了单个命令和global，会优先使用单个命令的配置。所有命令在[这里](https://pip.pypa.io/en/stable/cli/)查看
+这样每次使用install命令的时候都会自动加上`--index-url`选项了。[global]表示全局配置，如果同时配置了单个命令和global，会优先使用单个命令的配置。
 
 
 
