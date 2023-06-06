@@ -8,7 +8,7 @@
 通过插件添加的属性只能在store实例中访问，在`defineStore`中是访问不到的
 :::
 
-通过插件直接返回一个对象，这个对象上的属性可以在浏览器vue开发者工具直接看到属性，如果是手动添加的可以[这样做](_https://pinia.vuejs.org/zh/core-concepts/plugins.html)
+通过插件直接返回一个对象，这个对象上的属性可以在浏览器vue开发者工具直接看到属性，如果是手动添加的可以[这样做](https://pinia.vuejs.org/zh/core-concepts/plugins.html#augmenting-a-store)
 
 ```js
 pinia.use(({store}) => {
