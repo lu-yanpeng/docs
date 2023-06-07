@@ -49,6 +49,7 @@ export const navConfig = {
           {text: '手动创建项目', link: '/vue/base/manually-creating-projects'},          
           {text: '组件配置项', link: '/vue/base/comp-options'},
           {text: '组件实例属性', link: '/vue/base/comp-instance'},
+          {text: '监听器', link: '/vue/base/watch'},
         ]
       },
       {
