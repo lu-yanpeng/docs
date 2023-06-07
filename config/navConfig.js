@@ -57,7 +57,13 @@ export const navConfig = {
           {text: 'test', link: '/vue/senior/index'}
         ],
       },
-      {text: '小技巧', link: '/vue/tips'}
+      {
+          text: '案例',
+          items: [
+              {text: '小技巧', link: '/vue/example/tips'},
+              {text: '动态路由', link: '/vue/example/add-routes'},
+          ]
+      }
     ],
     '/python/': [
       {text: '虚拟环境', link: '/python/env'},
