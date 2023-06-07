@@ -9,6 +9,9 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   appearance: false,
+  head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     ...navConfig,
     logo: 'favicon.ico',
