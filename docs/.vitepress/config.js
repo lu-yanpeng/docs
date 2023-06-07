@@ -1,16 +1,18 @@
 import { defineConfig } from 'vitepress'
 import { navConfig } from '../../config/navConfig'
 
+const BASE = '/docs/'
+
 export default defineConfig({
   title: 'ly的笔记',
   description: '各种大杂烩笔记',
   lang: 'zh-CN',
-  base: '/docs/',
+  base: BASE,
   cleanUrls: true,
   lastUpdated: true,
   appearance: false,
   head: [
-      ['link', { rel: 'icon', href: '/favicon.ico' }]
+      ['link', { rel: 'icon', href: `${BASE}favicon.ico` }]
   ],
   themeConfig: {
     ...navConfig,
