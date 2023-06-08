@@ -95,6 +95,7 @@ export const navConfig = {
         items: [
           {text: '重试', link: '/frontend/axios/retry'},
           {text: '封装', link: '/frontend/axios/package'},
+          {text: '取消请求', link: '/frontend/axios/cancellation'},
         ]
       },
     ],
