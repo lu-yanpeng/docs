@@ -52,7 +52,8 @@ watch(() => props.name, () => {
 }, {immediate: true})
 ```
 
-如果不加`immediate`，那么只有props发生变化时才能监听到，也就没办法在初始化的时候监听了
+如果不加`immediate`，那么只有props发生变化时才能监听到，也就没办法在初始化的时候监听了。因为`props`在组件初始化的时候会先于
+`watch`执行，所以初始化的时候监听不到props的变化。
 
 
 ### 需要注意的地方

@@ -44,27 +44,40 @@ export const navConfig = {
     '/vue/': [
       {
         text: '基础',
+        collapsed: false,
         items: [
-          {text: '安装', link: '/vue/base/install'},          
-          {text: '手动创建项目', link: '/vue/base/manually-creating-projects'},          
-          {text: '组件配置项', link: '/vue/base/comp-options'},
-          {text: '组件实例属性', link: '/vue/base/comp-instance'},
-          {text: '监听器', link: '/vue/base/watch'},
-        ]
+          {text: '安装', link: '/vue/base/install'},
+          {text: '手动创建项目', link: '/vue/base/manually-creating-projects'},
+          {text: '响应式 ref', link: '/vue/base/ref'},
+          {text: '模板', link: '/vue/base/template'},
+          {text: '监听器 watch', link: '/vue/base/watch'},
+          {text: '计算属性 computed', link: '/vue/base/computed'},
+          {text: '方法 method', link: '/vue/base/method'},
+          {text: '样式', link: '/vue/base/style'},
+        ],
+      },
+      {
+        text: '组件',
+        collapsed: false,
+        items: [
+          {text: '样式绑定', link: '/vue/component/class-and-style'},
+        ],
       },
       {
         text: '高级',
+        collapsed: false,
         items: [
           {text: 'test', link: '/vue/senior/index'}
         ],
       },
       {
-          text: '案例',
-          items: [
-              {text: '小技巧', link: '/vue/example/tips'},
-              {text: '动态路由', link: '/vue/example/add-routes'},
-          ]
-      }
+        text: '案例',
+        collapsed: false,
+        items: [
+            {text: '小技巧', link: '/vue/example/tips'},
+            {text: '动态路由', link: '/vue/example/add-routes'},
+        ],
+      },
     ],
     '/python/': [
       {text: '虚拟环境', link: '/python/env'},
@@ -73,7 +86,14 @@ export const navConfig = {
       {text: 'pip', link: '/python/pip'},
     ],
     '/js/': [
-      {text: '介绍', link: '/js/intro'}
+      {text: '介绍', link: '/js/intro'},
+      {
+        text: '对象',
+        items: [
+          {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
+          {text: '代理 Proxy', link: '/js/object/proxy'},
+        ]
+      }
     ],
 
 
@@ -175,6 +195,7 @@ export const navConfig = {
         items: [
           {text: '介绍', link: '/tools/vitepress/overview'},
           {text: '翻页链接', link: '/tools/vitepress/prev-next-links'},
+          {text: '模板语法', link: '/tools/vitepress/template'},
         ]
       }
     ],
