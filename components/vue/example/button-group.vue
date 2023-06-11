@@ -1,0 +1,33 @@
+<script setup>
+import { ref } from 'vue'
+
+const currentBtn = ref(null)
+const onClick = (e) => {
+  if (e.target.tagName !== 'BUTTON') return
+
+  if (currentBtn.value) {
+    currentBtn.value.classList.toggle('active')
+  }
+  currentBtn.value = e.target
+  // 如果有active这个类就移除，没有就添加
+  currentBtn.value.classList.toggle('active')
+}
+</script>
+
+<template>
+  <div @click="onClick">
+    <button class="active" ref="currentBtn">A</button>
+    <button>B</button>
+    <button>C</button>
+  </div>
+</template>
+
+<style scoped>
+button {
+  margin-inline: 20px;
+  padding-inline: 10px;
+}
+.active {
+  background-color: darkseagreen;
+}
+</style>

@@ -1,0 +1,48 @@
+# 按钮组
+
+点击一个按钮会设置高亮样式，取消其他按钮高亮。[参考](https://zh.javascript.info/event-delegation)
+
+<script setup>
+import ButtonGroup from '../../../components/vue/example/button-group.vue'
+</script>
+
+<button-group />
+
+
+::: details 代码
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const currentBtn = ref(null)
+const onClick = (e) => {
+  if (e.target.tagName !== 'BUTTON') return
+
+  if (currentBtn.value) {
+    currentBtn.value.classList.toggle('active')
+  }
+  currentBtn.value = e.target
+  // 如果有active这个类就移除，没有就添加
+  currentBtn.value.classList.toggle('active')
+}
+</script>
+
+<template>
+  <div @click="onClick">
+    <button class="active" ref="currentBtn">A</button>
+    <button>B</button>
+    <button>C</button>
+  </div>
+</template>
+
+<style scoped>
+button {
+  margin-inline: 20px;
+  padding-inline: 10px;
+}
+.active {
+  background-color: darkseagreen;
+}
+</style>
+```
+:::

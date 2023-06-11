@@ -76,6 +76,7 @@ export const navConfig = {
         items: [
             {text: '小技巧', link: '/vue/example/tips'},
             {text: '动态路由', link: '/vue/example/add-routes'},
+            {text: '按钮组', link: '/vue/example/button-group'},
         ],
       },
     ],
