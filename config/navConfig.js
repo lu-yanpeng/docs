@@ -5,7 +5,7 @@ export const navConfig = {
   nav: [
     {text: 'vue', link: '/vue/base/install',},
     {text: 'js', link: '/js/intro'},
-    {text: 'python', link: '/python/typing',},    
+    {text: 'css', link: '/css/pseudo-classes'},
 
     {
       text: '前端',
@@ -25,6 +25,7 @@ export const navConfig = {
     {
       text: '后端',
       items: [
+        {text: 'python', link: '/backend/python/typing'},
         {text: 'FastAPI', link: '/backend/fastapi/intro'},        
       ]
     },
@@ -76,15 +77,8 @@ export const navConfig = {
         items: [
             {text: '小技巧', link: '/vue/example/tips'},
             {text: '动态路由', link: '/vue/example/add-routes'},
-            {text: '按钮组', link: '/vue/example/button-group'},
         ],
       },
-    ],
-    '/python/': [
-      {text: '虚拟环境', link: '/python/env'},
-      {text: '类型提示', link: '/python/typing'},
-      {text: '时间处理', link: '/python/datetime'},
-      {text: 'pip', link: '/python/pip'},
     ],
     '/js/': [
       {text: '介绍', link: '/js/intro'},
@@ -93,6 +87,14 @@ export const navConfig = {
         items: [
           {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
           {text: '代理 Proxy', link: '/js/object/proxy'},
+        ]
+      }
+    ],
+    '/css/': [
+      {
+        text: 'CSS',
+        items: [
+          {text: '伪类', link: '/css/pseudo-classes'}
         ]
       }
     ],
@@ -142,6 +144,7 @@ export const navConfig = {
           {text: 'markdown', link: '/frontend/vue-demo/markdown'},
           {text: '瀑布流', link: '/frontend/vue-demo/masonry'},
           {text: '对话框', link: '/frontend/vue-demo/dialog'},
+          {text: '按钮组', link: '/frontend/vue-demo/button-group'},
         ]
       },
     ],
@@ -155,6 +158,13 @@ export const navConfig = {
       }
     ],
 
+
+    '/backend/python/': [
+      {text: '虚拟环境', link: '/python/env'},
+      {text: '类型提示', link: '/python/typing'},
+      {text: '时间处理', link: '/python/datetime'},
+      {text: 'pip', link: '/python/pip'},
+    ],
     '/backend/fastapi': [      
       {text: '介绍', link: '/backend/fastapi/intro'},
       {text: '请求前缀', link: '/backend/fastapi/proxy'},

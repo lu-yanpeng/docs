@@ -3,7 +3,7 @@
 点击一个按钮会设置高亮样式，取消其他按钮高亮。[参考](https://zh.javascript.info/event-delegation)
 
 <script setup>
-import ButtonGroup from '../../../components/vue/example/button-group.vue'
+import ButtonGroup from '../../../components/frontend/vue-demo/button-group.vue'
 </script>
 
 <button-group />
