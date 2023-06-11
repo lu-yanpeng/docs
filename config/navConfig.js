@@ -55,6 +55,7 @@ export const navConfig = {
           {text: '计算属性 computed', link: '/vue/base/computed'},
           {text: '方法 method', link: '/vue/base/method'},
           {text: '样式', link: '/vue/base/style'},
+          {text: '指令', link: '/vue/base/directive'},
         ],
       },
       {

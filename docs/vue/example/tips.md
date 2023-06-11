@@ -17,3 +17,14 @@ const app = inject('app')
 // 具体组件的名称可以打开源码查看
 const icon = app.component('IconSettings')  // 可以返回已经注册的组件  
 ```
+
+
+## 强制刷新组件
+
+有时候你希望组件重新挂载，也就是让这个组件属性，可以给组件设置`key`属性，修改它来让vue自动刷新这个组件
+
+```vue
+// key = ref(0)
+// 改变key的值，组件就会自动刷新，这时候会调用一些生命周期函数
+<my-button :key="key" />
+```
