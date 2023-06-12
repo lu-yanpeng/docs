@@ -62,6 +62,8 @@ export const navConfig = {
         text: '组件',
         collapsed: false,
         items: [
+          {text: '基础', link: '/vue/component/base'},
+          {text: '传参 props', link: '/vue/component/props'},
           {text: '样式绑定', link: '/vue/component/class-and-style'},
         ],
       },
