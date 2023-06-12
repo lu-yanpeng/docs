@@ -14,6 +14,7 @@ import ButtonGroup from '../../../components/frontend/vue-demo/button-group.vue'
 <script setup>
 import { ref } from 'vue'
 
+// 原生写法
 const currentBtn = ref(null)
 const onClick = (e) => {
   if (e.target.tagName !== 'BUTTON') return
@@ -25,13 +26,29 @@ const onClick = (e) => {
   // 如果有active这个类就移除，没有就添加
   currentBtn.value.classList.toggle('active')
 }
+
+
+// vue写法
+const current = ref('A')
+const btnGroup = ['A', 'B', 'C']
 </script>
 
 <template>
-  <div @click="onClick">
-    <button class="active" ref="currentBtn">A</button>
-    <button>B</button>
-    <button>C</button>
+  <!--  原生写法-->
+  <!--  <div @click="onClick">-->
+  <!--    <button class="active" ref="currentBtn">A</button>-->
+  <!--    <button>B</button>-->
+  <!--    <button>C</button>-->
+  <!--  </div>-->
+
+  <div>
+    <button
+        v-for="value in btnGroup"
+        :key="value"
+        @click="current = value"
+        :class="{active: current === value}">
+      {{ value }}
+    </button>
   </div>
 </template>
 

@@ -58,3 +58,49 @@ const raw = '<p>txt</p>'
   </div>
 </template>
 ```
+
+
+
+## v-if
+
+`v-if`根据表达式的值动态渲染这块内容，在渲染前这块内容都不会出现在页面上，也就是在调试页面上找不到这块内容，它还没生成，表达式为true才会插入这块内容。
+
+这个指令一般用在只渲染一次的情况，也就是只需要显示一次，如果需要经常切换显示隐藏，你可能需要`v-show`
+
+```vue
+<!-- show为true才会渲染这个div以及它里面的其他元素 -->
+<div v-if="show"></div>
+```
+
+`v-if`可以和`v-else-if`和`v-else`一起用，就像普通的if语句一样
+
+```vue
+<div v-if="show"></div>
+<div v-else-if="name === 'test'"></div>
+<div v-else></div>
+```
+
+`v-if`可以用在`<template>`上，表示动态渲染`<template>`里面的内容但是`<template>`本身不会生成一个标签，这样做不会显示多余的标签
+
+```vue
+<template v-if="show">
+</template>
+```
+
+组件上也可以设置`v-if`，如果你需要这样做，你可能真正需要的是动态组件`<component>`
+
+```vue
+<my-button v-if="show" />
+```
+
+
+## v-show
+
+动态显示一块内容，表达式为`false`时，会给元素设置`style="display: none;"`，需要频繁显示或隐藏元素就用这个指令。
+
+```vue
+<div v-show="show"></div>
+```
+
+它不能设置在`template`标签上，因为它不能设置样式，只能设置在确切的html标签上。
+

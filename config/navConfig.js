@@ -65,6 +65,7 @@ export const navConfig = {
           {text: '基础', link: '/vue/component/base'},
           {text: '传参 props', link: '/vue/component/props'},
           {text: '样式绑定', link: '/vue/component/class-and-style'},
+          {text: '动态组件', link: '/vue/component/dynamic-component'},
         ],
       },
       {
