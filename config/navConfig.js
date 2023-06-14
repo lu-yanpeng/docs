@@ -25,8 +25,9 @@ export const navConfig = {
     {
       text: '后端',
       items: [
-        {text: 'python', link: '/backend/python/typing'},
+        {text: 'Python', link: '/backend/python/typing'},
         {text: 'FastAPI', link: '/backend/fastapi/intro'},        
+        {text: 'Docker', link: '/backend/docker/base/install'},        
       ]
     },
     {
@@ -34,7 +35,8 @@ export const navConfig = {
       items: [
         {text: 'git', link: '/tools/git/index'},
         {text: 'vite', link: '/tools/vite/config'},
-        {text: 'vitepress', link: '/tools/vitepress/overview'},                
+        {text: 'vitepress', link: '/tools/vitepress/overview'},
+        {text: 'npm', link: '/tools/npm/registry'},
       ],
     },
   ],
@@ -56,6 +58,7 @@ export const navConfig = {
           {text: '方法 method', link: '/vue/base/method'},
           {text: '样式', link: '/vue/base/style'},
           {text: '指令', link: '/vue/base/directive'},
+          {text: '事件处理', link: '/vue/base/event'},
         ],
       },
       {
@@ -66,6 +69,7 @@ export const navConfig = {
           {text: '传参 props', link: '/vue/component/props'},
           {text: '样式绑定', link: '/vue/component/class-and-style'},
           {text: '动态组件', link: '/vue/component/dynamic-component'},
+          {text: '自定义事件', link: '/vue/component/event'},
         ],
       },
       {
@@ -126,7 +130,7 @@ export const navConfig = {
         ]
       },
     ],
-    '/frontend/pinia': [
+    '/frontend/pinia/': [
       {
         text: 'pinia',
         items: [
@@ -164,12 +168,12 @@ export const navConfig = {
 
 
     '/backend/python/': [
-      {text: '虚拟环境', link: '/python/env'},
-      {text: '类型提示', link: '/python/typing'},
-      {text: '时间处理', link: '/python/datetime'},
-      {text: 'pip', link: '/python/pip'},
+      {text: '虚拟环境', link: '/backend/python/env'},
+      {text: '类型提示', link: '/backend/python/typing'},
+      {text: '时间处理', link: '/backend/python/datetime'},
+      {text: 'pip', link: '/backend/python/pip'},
     ],
-    '/backend/fastapi': [      
+    '/backend/fastapi/': [      
       {text: '介绍', link: '/backend/fastapi/intro'},
       {text: '请求前缀', link: '/backend/fastapi/proxy'},
       {text: '项目结构', link: '/backend/fastapi/project-dir'},
@@ -190,6 +194,14 @@ export const navConfig = {
           {text: '示例', link: '/backend/fastapi/pydantic/example'},
           {text: '验证器', link: '/backend/fastapi/pydantic/validator'},
           {text: '环境变量', link: '/backend/fastapi/pydantic/settings'},
+        ]
+      }
+    ],
+    '/backend/docker/': [
+      {
+        text: '基础',
+        items: [
+          {text: '安装', link: '/backend/docker/base/install'},          
         ]
       }
     ],
@@ -221,6 +233,9 @@ export const navConfig = {
           {text: '配置', link: '/tools/vite/config'},
         ]
       }
+    ],
+    '/tools/npm/': [
+      {text: '国内源', link: '/tools/npm/registry'},
     ]
   }
 }

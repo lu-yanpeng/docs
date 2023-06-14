@@ -104,3 +104,24 @@ const raw = '<p>txt</p>'
 
 它不能设置在`template`标签上，因为它不能设置样式，只能设置在确切的html标签上。
 
+
+
+## v-on
+
+给元素或组件绑定事件监听器，简写`@`。它的参数是要监听的事件名称，值是处理这个事件的函数或表达式。所有可监听的标签事件在[这里](https://developer.mozilla.org/zh-CN/docs/Web/API/Element)（向下滑找到事件菜单）
+也可以搜索这个标签看看有哪些事件可以监听
+
+```vue
+<template>
+  <button @click="count++"></button>
+  <input @blur="test"/>
+  <layout-aside @change-header="test" />
+</template>
+```
+
+事件监听可能会用到一些事件修饰符，具体可以在[官网](https://cn.vuejs.org/api/built-in-directives.html#v-on)查看
+
+更多用法请看标签[事件处理](./event)，[自定义事件](../component/event)
+
+
+
