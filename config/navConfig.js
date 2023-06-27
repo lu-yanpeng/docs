@@ -206,12 +206,14 @@ export const navConfig = {
         ]
       }
     ],
-    '/backend/linux/': {
-      text: 'linux',
-      items: [
-        {text: '命令', link: '/backend/linux/command'},
-      ]
-    },
+    '/backend/linux/': [
+      {
+        text: 'linux',
+        items: [
+            {text: '命令', link: '/backend/linux/command'},
+        ]
+      }
+    ],
 
     '/tools/git/': [
       {
