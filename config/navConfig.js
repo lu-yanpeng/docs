@@ -27,7 +27,8 @@ export const navConfig = {
       items: [
         {text: 'Python', link: '/backend/python/typing'},
         {text: 'FastAPI', link: '/backend/fastapi/intro'},        
-        {text: 'Docker', link: '/backend/docker/base/install'},        
+        {text: 'Docker', link: '/backend/docker/base/install'},
+        {text: 'Linux', link: '/backend/linux/command'},
       ]
     },
     {
@@ -205,6 +206,12 @@ export const navConfig = {
         ]
       }
     ],
+    '/backend/linux/': {
+      text: 'linux',
+      items: [
+        {text: '命令', link: '/backend/linux/command'},
+      ]
+    },
 
     '/tools/git/': [
       {
