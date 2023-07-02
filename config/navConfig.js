@@ -60,6 +60,7 @@ export const navConfig = {
           {text: '样式', link: '/vue/base/style'},
           {text: '指令', link: '/vue/base/directive'},
           {text: '事件处理', link: '/vue/base/event'},
+          {text: '过渡', link: '/vue/base/transition'},
         ],
       },
       {
@@ -96,6 +97,7 @@ export const navConfig = {
         items: [
           {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
           {text: '代理 Proxy', link: '/js/object/proxy'},
+          {text: '深拷贝', link: '/js/object/deep-clone'},
         ]
       }
     ],
@@ -103,7 +105,8 @@ export const navConfig = {
       {
         text: 'CSS',
         items: [
-          {text: '伪类', link: '/css/pseudo-classes'}
+          {text: '伪类', link: '/css/pseudo-classes'},
+          {text: '定位 position', link: '/css/position'},
         ]
       }
     ],
@@ -118,6 +121,8 @@ export const navConfig = {
           {text: '安装', link: '/frontend/vue-router/install'},
           {text: '路由', link: '/frontend/vue-router/route'},
           {text: '嵌套路由', link: '/frontend/vue-router/children'},
+          {text: '路由传参', link: '/frontend/vue-router/props'},
+          {text: '示例', link: '/frontend/vue-router/example'},
         ]
       }
     ],

@@ -200,6 +200,19 @@ const state = ref({ count: 0 })
 :::
 
 
+## shallowRef
+
+`ref`的浅层代理，只有替换对象的时候才会触发响应式。对于有多层数据结构的对象，可以用这个来进行代理提升响应熟读
+
+```js
+const user = shallowRef({name: 'zs', age: 18})
+// 不会触发响应式
+user.value.name = 'test'
+// 替换整个对象才会触发响应式
+user.value = {test: 'abc'}
+```
+
+
 ## reactive
 
 用这个可以给对象类型的数据创建响应式，普通类型不适用，比如字符串或数字。用它创建的响应式数据不需要`.value`
@@ -209,6 +222,35 @@ ref的.value值如果是对象类型就会用reactive包装形成响应式
 ::: tip
 这个少用，增加心智负担，建议全部使用`ref`
 :::
+
+
+
+## 原始值 toRaw
+
+可以通过`toRaw()`方法获取到ref对象的原始值
+
+```js
+import { ref, toRaw } from 'vue'
+
+const user = ref({name: 'zs', age: 18})
+const userInfo = toRaw(user.value)
+// userInfo === user -> true
+```
+
+一个对象类型的ref直接使用`.value`获取到的是被`proxy`代理的对象，在深拷贝的时候需要用到原始值，所以会用到这个方法
+
+```js
+const user = ref({name: 'zs', age: 18})
+// 这里输出的是被proxy代理过的对象，不是原始值
+console.log(user.value)
+
+const count = ref(1)
+// 对于普通类型可以直接获取到原始值
+console.log(count.value)
+```
+
+
+
 
 
 ## 正确用法

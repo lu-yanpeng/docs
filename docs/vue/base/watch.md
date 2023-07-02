@@ -171,3 +171,41 @@ watch(() => menuList.value.length, () => {
     console.log(menuList.value)
 })
 ```
+
+
+## 注意
+
+最好不要在一个`watchEffect`监听多个源，如果一个源一直为true，可能就监听不到另一个源的修改了。
+
+下面这个例子，只有c1为偶数的时候才会监听c2
+
+<script setup>
+import Watch from '../../../components/vue/base/watch.vue'
+</script>
+
+<Watch />
+
+```js
+const count1 = ref(0)
+const count2 = ref(0)
+
+watchEffect(() => {
+  console.log('监听')
+  if (count1.value % 2 === 1) {
+    console.log('c1', count1.value)
+    return
+  }
+  if (count2.value % 2 === 0) {
+    console.log('c2', count2.value)
+  }
+})
+```
+
+上面这个例子，如果`count1`为奇数，这时候改变count2的值也不会触发watch，因为执行到`if (count1.value % 2 === 1)`的时候，
+它发现表达式的值始没变，就没有理由继续执行里面的代码了，因为代码里面有`return`即使执行了，后面的count2也不会执行。这里如果去掉`return`就会执行count2的代码。
+
+
+如果`if (count1.value % 2 === 1)`为false，这时候就能监听到count2的变化。一般不建议监听监听多个源，对于两个值的情况可以用`if..else`。
+不要用`if..else if`这样会出现和上面一样的情况。
+
+上面这个例子说明了，有时候虽然要监听的值改变了，但是也会因为第一个监听源没变而没有触发后续代码。

@@ -1,9 +1,9 @@
-import {onMounted, onUnmounted, shallowRef, ref} from 'vue';
+import { onMounted, onUnmounted, shallowRef } from 'vue';
 import * as echarts from 'echarts';
 
 export const useEcharts = (chartRef, option) => {
   const myCharts = shallowRef(null);
-  const observe = ref(null);
+  const observe = shallowRef(null);
 
   onMounted(() => {
     // 初始化
@@ -18,8 +18,8 @@ export const useEcharts = (chartRef, option) => {
   });
 
   onUnmounted(() => {
-    console.log('卸载')
     myCharts.value.dispose();
+    observe.value.disconnect();
   });
 
   return { myCharts };

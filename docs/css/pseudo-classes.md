@@ -18,3 +18,30 @@
 </style>
 ```
 
+
+## :is()
+
+如果参数参数里面的条件，就会被选中。当多个子元素有同一个父类时可以简化代码。
+
+```html
+<div class="container">
+    <p class="a">123</p>
+    <p class="b">123</p>
+    <p class="c">123</p>
+</div>
+
+<style>
+.container :is(.a, .b, .c) {
+    color: green;
+}
+</style>
+```
+
+上面的`p`标签都有同一个父类，这样可以用`:is`来简化。正常写的话就是这样
+
+```css
+.container .a, .container .b, .container .c {
+    color: green;
+}
+```
+
