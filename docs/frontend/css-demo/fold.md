@@ -126,7 +126,10 @@ import Fold2 from '../../../components/frontend/css-demo/fold/fold2.vue';
 下面这个示例宽高都有展开动画，并且宽度会随着容器改变。通过设置`grid-template: 0fr/0fr`点击的时候设置成`1fr`就可以实现宽高的过渡了。
 内容宽度通过`ResizeObserver`动态跟随容器来设置。
 
-<Fold2 />
+<ClientOnly>
+    <Fold2 />
+</ClientOnly>
+
 
 ::: details 代码
 ```vue
