@@ -4,7 +4,7 @@ export const navConfig = {
   // 导航栏
   nav: [
     {text: 'vue', link: '/vue/base/install',},
-    {text: 'js', link: '/js/intro'},
+    {text: 'js', link: '/js/base/intro'},
     {text: 'css', link: '/css/pseudo-classes'},
 
     {
@@ -91,13 +91,20 @@ export const navConfig = {
       },
     ],
     '/js/': [
-      {text: '介绍', link: '/js/intro'},
+      {
+        text: '基础',
+        items: [
+          {text: '介绍', link: '/js/base/intro'},
+        ]
+      },
       {
         text: '对象',
         items: [
           {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
           {text: '代理 Proxy', link: '/js/object/proxy'},
           {text: '深拷贝', link: '/js/object/deep-clone'},
+          {text: '成员检测 in', link: '/js/object/own'},
+          {text: '判断对象是否相等', link: '/js/object/is-equal'},
         ]
       }
     ],
@@ -237,6 +244,7 @@ export const navConfig = {
           {text: '介绍', link: '/tools/vitepress/overview'},
           {text: '翻页链接', link: '/tools/vitepress/prev-next-links'},
           {text: '模板语法', link: '/tools/vitepress/template'},
+          {text: 'ssr 兼容性', link: '/tools/vitepress/ssr'},
         ]
       }
     ],
