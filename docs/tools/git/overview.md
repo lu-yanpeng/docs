@@ -63,7 +63,7 @@ git push origin test
 
 推送到自己仓库的`test`分支后，点击`pull requests`标签发起一个PR，请求合并`test`分支到主项目的`master`分支
 
-![Pull Requests](../../../static-img/tools/git/Snipaste_2023-07-09_23-49-07.png)
+![Pull Requests](../../static-img/tools/git/Snipaste_2023-07-09_23-49-07.png)
 
 
 然后仓库的管理员再根据提交的PR决定是否合并到项目中
