@@ -34,7 +34,7 @@ export const navConfig = {
     {
       text: '工具',
       items: [
-        {text: 'git', link: '/tools/git/index'},
+        {text: 'git', link: '/tools/git/install'},
         {text: 'vite', link: '/tools/vite/config'},
         {text: 'vitepress', link: '/tools/vitepress/overview'},
         {text: 'npm', link: '/tools/npm/registry'},
@@ -95,16 +95,18 @@ export const navConfig = {
         text: '基础',
         items: [
           {text: '介绍', link: '/js/base/intro'},
+          {text: '循环', link: '/js/base/while'},
         ]
       },
       {
         text: '对象',
         items: [
-          {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
           {text: '代理 Proxy', link: '/js/object/proxy'},
           {text: '深拷贝', link: '/js/object/deep-clone'},
           {text: '成员检测 in', link: '/js/object/own'},
           {text: '判断对象是否相等', link: '/js/object/is-equal'},
+          {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
+          {text: '属性标志', link: '/js/object/property-descriptors'},
         ]
       }
     ],
@@ -231,7 +233,7 @@ export const navConfig = {
       {
         text: 'GIT',
         items: [
-          {text: '安装', link: '/tools/git/index'},
+          {text: '安装', link: '/tools/git/install'},
           {text: '基本操作', link: '/tools/git/overview'},
           {text: '删除', link: '/tools/git/delete'},
         ]
