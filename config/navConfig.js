@@ -235,7 +235,17 @@ export const navConfig = {
         items: [
           {text: '安装', link: '/tools/git/install'},
           {text: '基本操作', link: '/tools/git/overview'},
+          {text: '推送 push', link: '/tools/git/push'},
+          {text: '拉取 pull', link: '/tools/git/pull'},
+          {text: '提交 commit', link: '/tools/git/commit'},
+          {text: '分支 branch', link: '/tools/git/branch'},
+          {text: '合并 merge', link: '/tools/git/merge'},
+          {text: '变基 rebase', link: '/tools/git/rebase'},
+          {text: '日志 log', link: '/tools/git/log'},
+          {text: '临时存储 stash', link: '/tools/git/stash'},
+          {text: '签出 checkout', link: '/tools/git/checkout'},
           {text: '删除', link: '/tools/git/delete'},
+          {text: 'pull requests', link: '/tools/git/PR'},
         ]
       }
     ],
