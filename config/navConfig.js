@@ -72,6 +72,7 @@ export const navConfig = {
           {text: '样式绑定', link: '/vue/component/class-and-style'},
           {text: '动态组件', link: '/vue/component/dynamic-component'},
           {text: '自定义事件', link: '/vue/component/event'},
+          {text: '插槽', link: '/vue/component/slot'},
         ],
       },
       {
@@ -216,7 +217,8 @@ export const navConfig = {
       {
         text: '基础',
         items: [
-          {text: '安装', link: '/backend/docker/base/install'},          
+          {text: '安装', link: '/backend/docker/base/install'},
+          {text: '示例', link: '/backend/docker/base/example'},
         ]
       }
     ],
