@@ -1,26 +1,30 @@
-import { onMounted, onUnmounted, shallowRef } from 'vue';
+import { shallowRef, onUnmounted, watchPostEffect } from 'vue';
 import * as echarts from 'echarts';
 
-export const useEcharts = (chartRef, option) => {
-  const myCharts = shallowRef(null);
-  const observe = shallowRef(null);
 
-  onMounted(() => {
-    // 初始化
-    myCharts.value = echarts.init(chartRef.value);
-    myCharts.value.setOption(option);
 
-    // 窗口变化时，重置图表大小
-    observe.value = new ResizeObserver(() => {
-      myCharts.value.resize();
-    });
-    observe.value.observe(chartRef.value);
+export const useEcharts = (containerRef, options) => {
+  const myChart = shallowRef(null);
+  const observe = shallowRef(null)
+
+  watchPostEffect(() => {
+    if (containerRef.value && (typeof options.value === 'object' && options.value !== null)) {
+      // 初始化myChart并且监听容器大小自动resize
+      if (myChart.value === null) {
+        myChart.value = echarts.init(containerRef.value);
+        observe.value = new ResizeObserver(() => myChart.value.resize());
+        observe.value.observe(containerRef.value);
+      }
+      myChart.value.setOption(options.value);
+    }
   });
 
   onUnmounted(() => {
-    myCharts.value.dispose();
-    observe.value.disconnect();
+    if (myChart.value) {
+      myChart.value.dispose();
+      observe.value.disconnect();
+    }
   });
 
-  return { myCharts };
+  return { myChart };
 };

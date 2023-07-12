@@ -13,6 +13,7 @@ export const navConfig = {
         {text: 'vue router', link: '/frontend/vue-router/intro'},
         {text: 'axios', link: '/frontend/axios/retry'},
         {text: 'pinia', link: '/frontend/pinia/intro'},
+        {text: 'echarts', link: '/frontend/echarts/base/concepts'},
         {
           text: '示例',
           items: [
@@ -157,6 +158,20 @@ export const navConfig = {
           {text: 'action', link: '/frontend/pinia/action'},
           {text: '插件', link: '/frontend/pinia/plugins'},
           {text: '常见问题', link: '/frontend/pinia/tips'},
+        ]
+      }
+    ],
+    '/frontend/echarts/': [
+      {
+        text: '基础',
+        items: [
+          {text: '概念', link: '/frontend/echarts/base/concepts'},
+        ]
+      },
+      {
+        text: '示例',
+        items: [
+          {text: '柱状图', link: '/frontend/echarts/example/bar'}
         ]
       }
     ],

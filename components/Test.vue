@@ -7,12 +7,12 @@ import { ref } from 'vue'
 import { useEcharts } from '../hooks/useEcharts'
 
 const chartRef = ref(null)
-const option = {
+const option = ref({
   tooltip: {},
   dataset: {
     source: [
-      ['语文', 100],
-      ['数学', 90]
+      ['语文', 80],
+      ['数学', 95]
     ]
   },
   series: [
@@ -20,7 +20,7 @@ const option = {
       type: 'pie',
     }
   ]
-}
+})
 useEcharts(chartRef, option)
 </script>
 
