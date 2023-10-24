@@ -23,3 +23,11 @@ git rm --cached file
 ```shell
 git rm -r folder
 ```
+
+## claen
+
+删除所有未提交和跟踪的文件
+
+```shell
+git clean -fd
+```
