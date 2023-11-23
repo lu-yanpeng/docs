@@ -26,7 +26,7 @@ export const navConfig = {
     {
       text: '后端',
       items: [
-        {text: 'Python', link: '/backend/python/typing'},
+        {text: 'Python', link: '/backend/python/base/typing'},
         {text: 'FastAPI', link: '/backend/fastapi/intro'},        
         {text: 'Docker', link: '/backend/docker/base/install'},
         {text: 'Linux', link: '/backend/linux/command'},
@@ -199,10 +199,21 @@ export const navConfig = {
 
 
     '/backend/python/': [
-      {text: '虚拟环境', link: '/backend/python/env'},
-      {text: '类型提示', link: '/backend/python/typing'},
-      {text: '时间处理', link: '/backend/python/datetime'},
-      {text: 'pip', link: '/backend/python/pip'},
+      {
+        text: '基础',
+        items: [
+          {text: '虚拟环境', link: '/backend/python/base/env'},
+          {text: '类型提示', link: '/backend/python/base/typing'},
+          {text: '时间处理', link: '/backend/python/base/datetime'},
+          {text: 'pip', link: '/backend/python/base/pip'},
+        ]
+      },
+      {
+        text: '高级',
+        items: [
+          {text: '异步', link: '/backend/python/advanced/async'}
+        ]
+      },
     ],
     '/backend/fastapi/': [      
       {text: '介绍', link: '/backend/fastapi/intro'},
