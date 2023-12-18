@@ -2,10 +2,4 @@
 layout: home
 ---
 
-# 测试文章
-
-<script setup>
-import Test from '../components/Test.vue'
-</script>
-
-<Test />
+首页施工中，点击上方导航栏进行跳转

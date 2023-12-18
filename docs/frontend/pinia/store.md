@@ -81,11 +81,18 @@ export const useMenuStore = defineStore('menu', () => {
 
 ## 不要直接解构store
 
-虽然store返回了一个对象，但是如果直接解构的话会丢失响应式（除了函数）
+store返回的是一个被`reactive`包装过的对象，如果直接解构的话会失去响应式
 
 ```js
-// menuList的值不会变，因为它丢失了响应式
-const { menuList } = menuStore
+const useTestStore = defineStore('test', () => {
+  const count = ref(0)
+  return { count }
+})
+
+const testStore = useTestStore()
+// 这样做将失去响应式，cont的值永远是0
+// 这就相当于 const { count } = reactive({ count: 0 })，这里count是一个普通值，不是响应式对象了 
+const { count } = useTestStore
 ```
 
 如果需要解构并且保持响应式，可以用`storeToRefs`store
@@ -94,7 +101,14 @@ const { menuList } = menuStore
 import { storeToRefs } from 'pinia'
 
 // 这样可以保持响应式
-const { menuList } = storeToRefs(menuStore)
+const { count } = storeToRefs(testStore)
 // 函数可以直接解构，因为它不需要响应式
 const { addRoute } = menuStore
+
+// 如果返回的值是一个包含ref的普通对象，那他可以保持响应式
+const config = {
+  id: ref(0)
+}
+// 因为id是config的属性他没有被解构，所以会保持响应式
+const { config } = testStore
 ```

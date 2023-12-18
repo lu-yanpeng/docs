@@ -251,3 +251,27 @@ class A:
         self.a = a
         self.b = b
 ```
+
+### Literal 字面量
+
+用来给有明确值的字面类标注类型
+
+```py
+S = Literal['1', '2', '3']
+# s只能是1 2 3 其中一个
+s: S = '1'
+```
+
+### type 类
+
+如果希望一个变量是某个类本身，或它的子类，而不是他的实例，就可以用`type`
+
+```py
+class Tags: ...
+class PageTags(Tags): ...
+
+# 指定t为这两个类本身，而不是他们的实例
+t: type[Tags] = PageTags
+# 相当于 PageTags()
+t()
+```

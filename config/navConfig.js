@@ -10,6 +10,7 @@ export const navConfig = {
     {
       text: '前端',
       items: [
+        {text: 'ts', link: '/frontend/type-script/example'},
         {text: 'vue router', link: '/frontend/vue-router/intro'},
         {text: 'axios', link: '/frontend/axios/retry'},
         {text: 'pinia', link: '/frontend/pinia/intro'},
@@ -30,6 +31,7 @@ export const navConfig = {
         {text: 'FastAPI', link: '/backend/fastapi/intro'},        
         {text: 'Docker', link: '/backend/docker/base/install'},
         {text: 'Linux', link: '/backend/linux/command'},
+        {text: 'MongoDb', link: '/backend/mongodb/install'},
       ]
     },
     {
@@ -124,6 +126,9 @@ export const navConfig = {
 
 
     // 前端
+    '/frontend/type-script/': [
+      {text: '示例', link: '/frontend/type-script/example'}
+    ],
     '/frontend/vue-router/': [
       {
         text: 'vue router',
@@ -255,6 +260,11 @@ export const navConfig = {
             {text: '命令', link: '/backend/linux/command'},
         ]
       }
+    ],
+    '/backend/mongodb/': [
+      {text: '安装', link: '/backend/mongodb/install'},
+      {text: '基础操作', link: '/backend/mongodb/simple'},
+      {text: '事务', link: '/backend/mongodb/transaction'},
     ],
 
     '/tools/git/': [
