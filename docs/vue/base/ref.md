@@ -1,5 +1,7 @@
 # 响应式
 
+> [参考](https://cn.vuejs.org/guide/essentials/reactivity-fundamentals.html)
+
 一个响应式数据在它发生改变的时候，所有引用它的地方都会跟着变。
 
 比如一个`ref`它的值变了，模板中的值就会跟着变，其他组件、事件监听器、watch函数，只要有用到的地方都会跟着变。
@@ -39,6 +41,18 @@ const count = ref(0)
 
 console.log(user.value)  // 打印 Proxy(Object) {name: 'zs'}
 console.log(count.value)  // 打印 0
+```
+
+ref可以被直接替换，因为替换的是他的`.value`值，ref本身没有变，它还是响应式的
+
+```ts
+const user = ref({id: 1})
+// 通过.value替换数据是响应式的
+user.value = {name: 'zs'}
+
+// 如果直接替换reactive就不是响应式的了，因为reactive对象已经被替换掉，现在它就是一个普通对象
+const profile = reactive({age: 18})
+profile = {name: 'ls'}
 ```
 
 
@@ -113,6 +127,47 @@ const user = ref({
 const {name, age} = user.value
 ```
 
+### 解构细节
+
+一个ref他的属性也是ref时，这个属性会被自动解包。
+
+```ts
+const user = ref({
+  profile: ref({
+    name: 'zs',
+    age: 18
+  })
+})
+
+// 这里不需要.value就能访问到name的值，因为它被解包了
+user.value.profile
+```
+
+比如在定义props的时候，从父组件传递都是ref，但是通过`defineProps`接收的时候都被解包了，所以不需要`.value`也能访问
+
+```ts
+const props = defineProps<{
+  model: { name: string }
+  config: object
+}>()
+    
+// 传递的ref已经被自动解包
+props.model
+```
+
+所以，想要让一个元素值的ref在解包时也能保持响应式，就要把他定义在普通对象里
+
+```ts
+// 这样做是响应式的
+const user = { id: ref(1) }
+const { id } = user
+id.value
+
+// 这样不是响应式的
+const user2 = ref({ id2: ref(1) })
+const { id2 } = user2.value
+id  // 它是一个普通值
+```
 
 
 ## 模板中解包
@@ -132,7 +187,7 @@ const name = ref('zs')
 
 注意，只有数据顶层是ref才能自动解包，如果是这种形式还是需要.value
 
-```js
+```vue
 <script setup>
 const info = { name: ref('zs') }
 </script>
@@ -223,6 +278,17 @@ ref的.value值如果是对象类型就会用reactive包装形成响应式
 这个少用，增加心智负担，建议全部使用`ref`
 :::
 
+```ts
+const user = reactive({ id: 1 })
+// 这样直接替换一个reactive对象不是响应式的，因为他和原本的响应式user已经失去联系
+// 现在它就是一个普通的{name:'zs'}，不再是响应式数据了
+user = { name: 'zs' }
+
+// 所以建议所有的响应式数据都通过ref定义，这样通过.value替换对象的时候还会保持响应式
+// 因为test这个对象没有被替换，替换的只是.value的值，它本身还是响应式的
+const test = ref({id: 1})
+test.value = {name: 'zs'}
+```
 
 
 ## 原始值 toRaw

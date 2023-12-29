@@ -84,6 +84,51 @@ defineProps(['menuList', 'obj-name'])
 
 这样在debug时更方便找到问题，一般推荐全部用驼峰命名。
 
+### 这里有个问题
+
+在模板中使用ref的时候会被自动解包，也就是传递的时候会自动加上`.value`
+
+```ts
+const a = ref(0)
+
+// 这里传递a，会被自动解包成a.value
+<my-button :a="a" / >
+```
+
+像上面这种情况，子组件依然能保持响应式，按理说解包后传递的应该是数字0，不知道为什么还会保持响应式。
+猜测应该是子组件的`defineProps()`自动跟这些传入的props保持了关联
+
+
+## v-bind
+
+可以直接使用`v-bind`不带参数的形式传递props，如果传递一个对象，他会被自动展开
+
+```ts
+const config = ref({
+  id: 1,
+  title: 'test'
+})
+
+// 因为顶层ref会被直接解包，所以这相当于 :id="config.id" :title="config.title"
+<my-button v-bind="config" />
+```
+
+这对于需要一次传递多个props很有用，注意**不要**传递普通对象，因为它不会自动解包
+
+```ts
+// v-bind绑定它时里面的属性不会解包，传递的是一个ref对象
+const config = {
+  id: ref(1),
+  title: ref('test')
+}
+
+// 子组件这样接收的时候编辑器会报错，因为传递的是一个Ref<number>。但实际上也能正常使用
+defineProps<{
+  id: number
+  title: string
+}>()
+```
+
 
 ## 使用props
 
