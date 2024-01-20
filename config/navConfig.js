@@ -64,6 +64,7 @@ export const navConfig = {
           {text: '指令', link: '/vue/base/directive'},
           {text: '事件处理', link: '/vue/base/event'},
           {text: '过渡', link: '/vue/base/transition'},
+          {text: '双向绑定 v-model', link: '/vue/base/v-model'},
         ],
       },
       {
