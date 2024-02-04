@@ -220,6 +220,12 @@ export const navConfig = {
           {text: '异步', link: '/backend/python/advanced/async'}
         ]
       },
+      {
+        text: '常见问题',
+        items: [
+          {text: 'C++ is required', link: '/backend/python/FAQ/C++_is_required'}
+        ]
+      },
     ],
     '/backend/fastapi/': [      
       {text: '介绍', link: '/backend/fastapi/intro'},
