@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { nextTick, onMounted } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
+
+const top = ref(0)
+const bottom = ref(0)
 
 onMounted(() => {
   // 组件卸载的时候应该取消监视器
@@ -16,7 +19,10 @@ onMounted(() => {
           // 相对于最近的，有定位属性的父元素的距离
           console.log(target.offsetTop)
           // 相对于视口的距离，可以通过这个属性来判断阅读一篇文章时当前章节是否读完
-          console.log(target.getBoundingClientRect())
+          const p = target.getBoundingClientRect()
+          top.value = p.top
+          bottom.value = p.bottom
+          console.log(p)
         }
       }
     })
@@ -28,7 +34,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="resize-test">点击右下角拖动</div>
+  <div class="resize-test">
+    <p>点击右下角拖动</p>
+    <p>top: {{ top }}</p>
+    <p>bottom: {{ bottom }}</p>
+  </div>
 </template>
 
 <style scoped lang="less">
