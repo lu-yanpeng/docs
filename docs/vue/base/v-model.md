@@ -62,3 +62,57 @@ const onChange = () => {
   </div>
 </template>
 ```
+
+## defineModel
+
+3.4版本提供了更简单的`v-model`方法
+
+```vue
+<script setup lang="ts">
+const show = defineModel('visible', { default: false })
+</script>
+
+<template>
+  <a-modal v-model:visible="show"></a-modal>
+</template>
+```
+
+这样只要`show`改变了它会自动改变父组件的值，这相当于之前的用法：
+
+```vue
+<script setup lang="ts">
+  import { ref, watchPostEffect } from 'vue'
+
+  const props = withDefaults(
+      defineProps<{
+        visible: boolean
+      }>(),
+      {
+        visible: false
+      }
+  )
+  const emits = defineEmits<{
+    'update:visible': [visible: false]
+  }>()
+  
+  const show = ref(props.visible)
+  watchPostEffect(() => {
+    // 打开对话框
+    if (props.visible) {
+      show.value = props.visible
+    }
+  })
+  watchPostEffect(() => {
+    // 关闭对话框
+    if (!show.value) {
+      emits('update:visible', false)
+    }
+  })
+</script>
+
+<template>
+  <a-modal v-model:visible="show"> </a-modal>
+</template>
+```
+
+可以看到确实省了很多代码

@@ -190,6 +190,7 @@ export const navConfig = {
           {text: '瀑布流', link: '/frontend/vue-demo/masonry'},
           {text: '对话框', link: '/frontend/vue-demo/dialog'},
           {text: '按钮组', link: '/frontend/vue-demo/button-group'},
+          {text: '监听元素改变', link: '/frontend/vue-demo/resize-observer'},
         ]
       },
     ],
