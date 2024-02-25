@@ -191,6 +191,7 @@ export const navConfig = {
           {text: '对话框', link: '/frontend/vue-demo/dialog'},
           {text: '按钮组', link: '/frontend/vue-demo/button-group'},
           {text: '监听元素改变', link: '/frontend/vue-demo/resize-observer'},
+          {text: '取消请求', link: '/frontend/vue-demo/cancellation'},
         ]
       },
     ],
