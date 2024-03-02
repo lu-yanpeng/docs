@@ -77,6 +77,7 @@ export const navConfig = {
           {text: '动态组件', link: '/vue/component/dynamic-component'},
           {text: '自定义事件', link: '/vue/component/event'},
           {text: '插槽', link: '/vue/component/slot'},
+          {text: '组件实例 ref', link: '/vue/component/ref'},
         ],
       },
       {
