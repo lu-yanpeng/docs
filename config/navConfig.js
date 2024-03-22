@@ -65,6 +65,7 @@ export const navConfig = {
           {text: '事件处理', link: '/vue/base/event'},
           {text: '过渡', link: '/vue/base/transition'},
           {text: '双向绑定 v-model', link: '/vue/base/v-model'},
+          {text: '组件缓存 keep-alive', link: '/vue/base/keep-alive'},
         ],
       },
       {
@@ -113,6 +114,12 @@ export const navConfig = {
           {text: '判断对象是否相等', link: '/js/object/is-equal'},
           {text: '访问器属性 setter/getter', link: '/js/object/getter-setter'},
           {text: '属性标志', link: '/js/object/property-descriptors'},
+        ]
+      },
+      {
+        text: '文档对象 document',
+        items: [
+          {text: '选择元素 querySelector', link: '/js/document/select'},
         ]
       }
     ],
