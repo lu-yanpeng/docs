@@ -228,6 +228,7 @@ export const navConfig: NavConfig = {
         items: [
           {text: 'table', link: '/frontend/css-demo/table'},
           {text: '展开动画', link: '/frontend/css-demo/fold'},
+          {text: '页面布局', link: '/frontend/css-demo/layout'},
         ]
       }
     ],
@@ -337,6 +338,7 @@ export const navConfig: NavConfig = {
           {text: '临时存储 stash', link: '/tools/git/stash'},
           {text: '签出 checkout', link: '/tools/git/checkout'},
           {text: '删除', link: '/tools/git/delete'},
+          {text: '恢复 reflog', link: '/tools/git/reflog'},
           {text: 'pull requests', link: '/tools/git/PR'},
         ]
       }
