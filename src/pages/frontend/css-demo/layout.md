@@ -6,8 +6,9 @@
 > [参考](https://www.bilibili.com/video/BV1nQ4y1V77U/?spm_id_from=333.999.0.0&vd_source=386916773b6f7371457f378bd0577b35)。
 > grid实现元素自动居中，这个布局两侧自动设置宽度，中间设置一个最大宽度，小于这个宽度就会自适应。
 
-<script setup lang="ts">
-import LayoutGrid from '@/components/frontend/css-demo/layout/layout-grid.vue'
+<script setup>
+import LayoutGrid from '@/components/frontend/css-demo/layout/layout-grid.vue';
+import AutoHeight from '@/components/frontend/css-demo/layout/auto-height.vue';
 </script>
 
 <layout-grid />
@@ -66,6 +67,42 @@ import LayoutGrid from '@/components/frontend/css-demo/layout/layout-grid.vue'
     /*设置起始位置和结束位置实现布局*/
     .custom-width {
       grid-column: content-start / full-width-end;
+    }
+  }
+</style>
+```
+:::
+
+纵向布局，`grid-template-rows: auto 1fr;`一个区域有固定高度，另一个用`1fr`自动填充
+
+<auto-height />
+
+::: details 代码
+```vue
+<template>
+  <div class="column-grid">
+    <div class="header">这是头部</div>
+    <div class="main">高度100%</div>
+  </div>
+</template>
+
+<style scoped lang="less">
+  .column-grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 300px;
+    height: 200px;
+    border: 1px solid red;
+    resize: both;
+    overflow: auto;
+
+    .header {
+      height: 44px;
+      background-color: #38bdf8;
+    }
+    .main {
+      height: 100%;
+      background-color: #00b42a;
     }
   }
 </style>

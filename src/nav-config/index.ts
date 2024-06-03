@@ -100,6 +100,7 @@ export const navConfig: NavConfig = {
         items: [
           {text: '小技巧', link: '/vue/example/tips'},
           {text: '动态路由', link: '/vue/example/add-routes'},
+          {text: '动态图片', link: '/vue/example/get-image-src'},
         ],
       },
     ],
@@ -229,6 +230,7 @@ export const navConfig: NavConfig = {
           {text: 'table', link: '/frontend/css-demo/table'},
           {text: '展开动画', link: '/frontend/css-demo/fold'},
           {text: '页面布局', link: '/frontend/css-demo/layout'},
+          {text: '滚动条相关', link: '/frontend/css-demo/scroll'},
         ]
       }
     ],
