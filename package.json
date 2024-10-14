@@ -10,10 +10,13 @@
     "pinia": "^2.1.7"
   },
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
     "@types/echarts": "^4.9.22",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.16.11",
     "less": "^4.2.0",
-    "vitepress": "^1.0.1"
+    "vitepress": "^1.0.1",
+    "@vue/tsconfig": "^0.5.1",
+    "typescript": "~5.5.4"
   },
   "peerDependencies": {
     "vue": "^3.4.21"
