@@ -73,3 +73,54 @@ emit('changeNum', 123, 'abc')
 ## 关于用法
 
 如果定义的组件需要给很多人用，建议用自定义事件来通信。如果组件只有自己用的话，可以用依赖注入或者props传入函数来通信。
+
+
+## 异步事件
+
+很多时候组件抛出事件之后需要等待父组件处理完毕，然后根据结果执行下一步操作，这种需要等待的事件就可以用异步事件
+
+子组件定义事件的时候，通过`Promise`传递`resolve`函数，等待这个`Promise`完成，就可以实现异步的功能
+
+<script setup>
+import AsyncEvent from '@/components/vue/base/async-event/index.vue'
+</script>
+
+<async-event />
+
+::: details 源码
+子组件
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const emits = defineEmits<{
+  submit: [resolve: (value: boolean | PromiseLike<boolean | null> | null) => void]
+}>()
+
+const result = ref<boolean | null>(null)
+const onClick = async () => {
+  // 等待这个promise完成
+  result.value = await new Promise((resolve) => {
+    emits('submit', resolve)
+  })
+  // 父组件调用resolve之后才会继续执行后续的代码
+  console.log('执行完毕')
+}
+</script>
+```
+
+父组件
+```vue
+<script setup lang="ts">
+import ChildComps from './child.vue'
+
+const onSubmit = (resolve: (v: boolean) => boolean) => {
+  const text = confirm('关闭后子组件会得到这次弹窗的结果')
+  resolve(text)
+}
+</script>
+```
+:::
+
+弹窗表单一般在保存的时候需要先校验数据并发送保存请求，这样就可以用异步事件，先发送请求再根据结果
+判断是否要关闭弹窗
