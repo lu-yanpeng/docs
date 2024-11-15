@@ -22,6 +22,21 @@ const buttonRef = ref<InstanceType<typeof MyButton> | null>(null)
 </template>
 ```
 
+在vue3.5中，可以用`useTemplateRef`来获取组件实例
+
+```vue
+<script setup lang="ts">
+import { useTemplateRef } from 'vue'
+import MyButton from './my-button.vue'
+
+const myButtonRef = useTemplateRef<InstanceType<typeof MyButton> | null>('myButtonRef')
+</script>
+
+<template>
+  <my-button ref="myButtonRef">按钮</my-button>
+</template>
+```
+
 ## 导出属性
 
 在`setup`定义的组件中，如果不手动导出属性，组件实例上就访问不到任何属性，通过`defineExpose`来导出外部可以使用的属性

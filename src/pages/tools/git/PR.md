@@ -10,6 +10,14 @@
 
 ```shell
 git remote add upstream '仓库地址'
+# 设置后可以查看到上游的地址
+git remote -v
+```
+
+拉取上游的更新，只会拉取提交日志，不会更新代码，需要自己手动合并代码
+
+```shell
+git fetch upstream
 ```
 
 同步上游代码，将本地代码和源仓库代码进行同步，需要先设置上游才行

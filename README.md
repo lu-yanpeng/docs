@@ -50,6 +50,13 @@ SSR打包只会在`beforeCreate`和`created`的时候检查对象，所以在`mo
 
 组件只能导入当前目录下的其他组件，如果是`../`这种路径就会报错。
 
+在md文件中，可以这样导入`src/components`下的组件
+
+```vue
+<script setup>
+import ButtonGroup from '@/components/frontend/vue-demo/button-group.vue'
+</script>
+```
 
 ## 项目结构
 

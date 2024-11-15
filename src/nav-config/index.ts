@@ -220,6 +220,8 @@ export const navConfig: NavConfig = {
           {text: '按钮组', link: '/frontend/vue-demo/button-group'},
           {text: '监听元素改变', link: '/frontend/vue-demo/resize-observer'},
           {text: '取消请求', link: '/frontend/vue-demo/cancellation'},
+          {text: '基础表单', link: '/frontend/vue-demo/basic-form'},
+          {text: 'schema表单', link: '/frontend/vue-demo/schema-form'},
         ]
       },
     ],

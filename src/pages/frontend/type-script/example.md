@@ -24,3 +24,17 @@ export namespace DefaultTheme {
 // 用法
 DefaultTheme.Config
 ```
+
+## 泛型
+
+给一个函数传递类型
+
+```ts
+const submit = async <T> (): Promise<T> => {
+  // 只做演示，实际应该返回T对应的类型
+  return [1, 2] as T
+}
+
+// 传入什么类型返回值就是什么类型
+submit<number[]>()
+```
