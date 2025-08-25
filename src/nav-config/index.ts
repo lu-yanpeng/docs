@@ -127,6 +127,7 @@ export const navConfig: NavConfig = {
         text: '文档对象 document',
         items: [
           {text: '选择元素 querySelector', link: '/js/document/select'},
+          {text: '视口监听 IntersectionObserver', link: '/js/document/IntersectionObserver'},
         ]
       }
     ],
@@ -136,6 +137,7 @@ export const navConfig: NavConfig = {
         items: [
           {text: '伪类', link: '/css/pseudo-classes'},
           {text: '定位 position', link: '/css/position'},
+          {text: '层叠上下文', link: '/css/stacking-context'},
         ]
       },
       {

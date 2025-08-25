@@ -56,7 +56,31 @@ trusted-host: 源地址
 
 **linux**
 
-待补充...
+> 系统自带的python环境可能没有安装pip，运行pip如果报错可以按照他给的提示安装pip，比如`sudo apt install python3-pip`
+
+首先需要找到系统级的配置文件目录，就是`XDG_CONFIG_DIRS`这个环境变量的值，在他目录下创建`/pip/pip.conf`然后写入配置
+
+找到`XDG_CONFIG_DIRS`的位置，一般是在`/etc/xdg`
+
+```shell
+# 这个命令可以输出他的值，有多个值会用 : 隔开
+echo $XDG_CONFIG_DIRS
+```
+
+在配置文件目录下创建`/pip/pip.conf`并写入配置
+
+```shell
+cd /etc/xdg
+mkdir pip
+sudo vim pip.conf
+```
+
+写入下面的配置
+
+```text
+[install]
+index-url: https://pypi.tuna.tsinghua.edu.cn/simple
+```
 
 ### 临时指定
 
