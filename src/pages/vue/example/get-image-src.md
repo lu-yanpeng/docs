@@ -15,3 +15,14 @@ export const getImgSrc = (name: string) => {
 ```
 
 推荐把这个文件放在img路径下，也就是跟图片放在一起，这样任意组件都可以很方便的调用这个方法。
+
+**注意**：只能动态导入`img-src.ts`所在同级目录的文件，它的子目录无法导入。
+
+```text
+|--1
+|----test.png
+|--phone.png
+|--img-src.ts
+```
+
+上面的`img-src.ts`可以导入和它同级的phone.png，不能导入`1/test.png`
