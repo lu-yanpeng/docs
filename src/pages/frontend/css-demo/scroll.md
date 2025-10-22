@@ -4,6 +4,7 @@
 
 <script setup>
 import AutoScroll from '@/components/frontend/css-demo/scroll/index.vue';
+import ScrollOverflow from '@/components/frontend/css-demo/scroll/overflow.vue';
 </script>
 
 <auto-scroll />
@@ -42,3 +43,46 @@ import AutoScroll from '@/components/frontend/css-demo/scroll/index.vue';
 </style>
 ```
 :::
+
+<ScrollOverflow />
+
+::: details 代码
+```vue
+<template>
+  <div class="nav-bar _mask-img">
+    <div class="scroll-container">
+      <ul>
+        <li class="" v-for="i in 12" :key="i">--{{ i }}--</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="less">
+  ._container {
+    border: 1px solid red;
+    
+    ._mask-img {
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .scroll-none {
+      scrollbar-width: none;
+    }
+
+    .nav-bar {
+      overflow-x: auto;
+      padding-inline: 30px;
+
+      .scroll-container {
+        width: max-content;
+        border: 1px solid tan;
+
+        ul {
+          display: flex;
+        }
+      }
+    }
+  }
+</style>
+```
